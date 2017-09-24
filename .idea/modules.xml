@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CountBook.iml" filepath="$PROJECT_DIR$/CountBook.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CountBook.iml" filepath="$PROJECT_DIR$/CountBook.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hdc-CountBook.iml" filepath="$PROJECT_DIR$/hdc-CountBook.iml" />
     </modules>
   </component>
 </project>

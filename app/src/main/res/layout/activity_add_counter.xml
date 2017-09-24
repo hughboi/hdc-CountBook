@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hugh.countbook.AddCounterActivity">
+
+    <EditText
+        android:id="@+id/counterName"
+        android:layout_width="332dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Counter Name"
+        android:inputType="text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/initialValue"
+        android:layout_width="215dp"
+        android:layout_height="43dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="Initial Counter Value"
+        android:inputType="number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/counterName" />
+
+    <EditText
+        android:id="@+id/comment"
+        android:layout_width="344dp"
+        android:layout_height="213dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:gravity="top|left"
+        android:hint="Comment"
+        android:inputType="textMultiLine"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/initialValue" />
+
+    <Button
+        android:id="@+id/createCounter"
+        android:layout_width="338dp"
+        android:layout_height="49dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="0dp"
+        android:text="Create"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/comment" />
+
+</android.support.constraint.ConstraintLayout>
