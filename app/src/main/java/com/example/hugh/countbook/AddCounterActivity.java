@@ -1,6 +1,7 @@
 package com.example.hugh.countbook;
 
 import android.content.Intent;
+import android.support.annotation.StringDef;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,9 +34,13 @@ public class AddCounterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (validationSuccess()){
                     Intent mainIntent = new Intent(AddCounterActivity.this, MainActivity.class);
-
+                    mainIntent.putExtra("counterName", counterName.getText().toString());
+                    mainIntent.putExtra("initialValue", Integer.parseInt(initialValue.getText().toString()));
+                    mainIntent.putExtra("comment", comment.getText().toString());
+                    setResult(RESULT_OK, mainIntent);
+                    finish();
                 } else{
-                    ;
+                    assert true;
                 }
             }
         });
