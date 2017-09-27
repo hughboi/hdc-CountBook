@@ -147,17 +147,19 @@ public class MainActivity extends AppCompatActivity {
                 itemView = inflator.inflate(R.layout.counter_item, parent, false);
             }
 
-            // Find car to work with
+            // Find counter to work with in the list view
             Counter currentCounter = counterItems.get(position);
 
-            // Fill the view
+            // Set the counter name in the view object within the list view
             holder.counterName  = (TextView) itemView.findViewById(R.id.counterName);
             holder.counterName.setText(currentCounter.getCounterName());
 
+            // set the current counter value in the view object within the list view
             holder.currentCounterValue = (TextView) itemView.findViewById(R.id.currentValue);
             String counterValue = "Current Value: " + currentCounter.getCurrentCounterValue();
             holder.currentCounterValue.setText(counterValue);
 
+            // set on click listeners for the increment/decrement buttons in the view object
             holder.incrementButton = (Button) itemView.findViewById(R.id.incrementButton);
             holder.decrementButton = (Button) itemView.findViewById(R.id.decrementButton);
             initViewButtonListeners(holder, currentCounter);
