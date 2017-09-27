@@ -153,13 +153,36 @@ public class MainActivity extends AppCompatActivity {
             // Fill the view
             holder.counterName  = (TextView) itemView.findViewById(R.id.counterName);
             holder.counterName.setText(currentCounter.getCounterName());
+
             holder.currentCounterValue = (TextView) itemView.findViewById(R.id.currentValue);
             String counterValue = "Current Value: " + currentCounter.getCurrentCounterValue();
             holder.currentCounterValue.setText(counterValue);
-            Button incrementButton = (Button) itemView.findViewById(R.id.incrementButton);
-            Button decrementButton = (Button) itemView.findViewById(R.id.decrementButton);
+
+            holder.incrementButton = (Button) itemView.findViewById(R.id.incrementButton);
+            holder.decrementButton = (Button) itemView.findViewById(R.id.decrementButton);
+            initViewButtonListeners(holder, currentCounter);
 
             return itemView;
         }
+    }
+
+    private void initViewButtonListeners(ViewHolder viewHolder, final Counter associatedCounter){
+        viewHolder.incrementButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                associatedCounter.incrementCurrentCounterValue();
+                adapter.notifyDataSetChanged();
+                //save_in_file();
+            }
+        });
+
+        viewHolder.decrementButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                associatedCounter.decrementCurrentCounterValue();
+                adapter.notifyDataSetChanged();
+                //save_in_file;
+            }
+        });
     }
 }

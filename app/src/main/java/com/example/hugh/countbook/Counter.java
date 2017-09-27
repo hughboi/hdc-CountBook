@@ -44,6 +44,8 @@ public class Counter {
         this.currentCounterValue++;
     }
 
+    public void decrementCurrentCounterValue() { this.currentCounterValue--; }
+
     public String getComment() {
         return comment;
     }
