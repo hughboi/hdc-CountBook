@@ -68,32 +68,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume(){
-        super.onResume();
-        // !!!! REMEMBER TO SET CURRENT NUMBER OF ACTIVE COUNTERS HERE !!!!
-    }
-
-    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if (requestCode == ADD_COUNTER_REQUEST && resultCode == RESULT_OK){
-            // Retrieve information from add counter activity, and pass
-
-        } else{
-            assert false; // !!!! CHANGE LATER !!!!
+            String counterName = data.getStringExtra("counterName");
+            int initialValue = data.getIntExtra("initialValue", 0);
+            String comment = data.getStringExtra("comment");
+            Counter newCounter = new Counter(counterName, initialValue, comment);
+            counterItems.add(newCounter);
+            AppStorage.saveInFile(counterItems, getApplicationContext());
+            adapter.notifyDataSetChanged();
         }
-    }
-
-    private void populateListView(){
-        counterItems = new ArrayList<Counter>();
-        Counter counter1 = new Counter("Counter1", 5);
-        Counter counter2 = new Counter("Counter2", 3);
-        counterItems.add(counter1);
-        counterItems.add(counter2);
-
-        AppStorage.saveInFile(counterItems, this.getApplicationContext());
-
-        adapter = new CounterListAdapter();
-        counterListView.setAdapter(adapter);
     }
 
     private void initListeners() {
@@ -163,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 associatedCounter.incrementCurrentCounterValue();
                 adapter.notifyDataSetChanged();
-                //save_in_file();
+                AppStorage.saveInFile(counterItems, getApplicationContext());
             }
         });
 
@@ -172,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 associatedCounter.decrementCurrentCounterValue();
                 adapter.notifyDataSetChanged();
-                //save_in_file;
+                AppStorage.saveInFile(counterItems, getApplicationContext());
             }
         });
     }

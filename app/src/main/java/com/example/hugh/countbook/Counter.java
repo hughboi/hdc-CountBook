@@ -20,6 +20,14 @@ public class Counter {
         this.lastModifiedDate = new Date();
     }
 
+    public Counter(String name, int initialValue, String comment){
+        this.counterName = name;
+        this.comment = comment;
+        this.initialCounterValue = initialValue;
+        this.currentCounterValue = initialValue;
+        this.lastModifiedDate = new Date();
+    }
+
     public String getCounterName() {
         return counterName;
     }

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class AddCounterActivity extends AppCompatActivity {
 
@@ -25,28 +26,41 @@ public class AddCounterActivity extends AppCompatActivity {
         counterName = (EditText) findViewById(R.id.counterName);
         initialValue = (EditText) findViewById(R.id.initialValue);
         comment = (EditText) findViewById(R.id.comment);
+        createCounterListener();
     }
 
-    private void createCounter(){
+    private void createCounterListener(){
         createButton = (Button) findViewById(R.id.createCounter);
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (validationSuccess()){
-                    Intent mainIntent = new Intent(AddCounterActivity.this, MainActivity.class);
-                    mainIntent.putExtra("counterName", counterName.getText().toString());
-                    mainIntent.putExtra("initialValue", Integer.parseInt(initialValue.getText().toString()));
-                    mainIntent.putExtra("comment", comment.getText().toString());
-                    setResult(RESULT_OK, mainIntent);
+                    Intent resultIntent = createResultIntent();
                     finish();
-                } else{
-                    assert true;
                 }
             }
         });
     }
 
-    private Boolean validationSuccess(){
-        return true;// Check if all fields are entered correctly
+    private boolean validationSuccess(){
+        if(counterName.getText().toString().equalsIgnoreCase("")){
+            Toast.makeText(getApplicationContext(), "You must enter a name for the counter",
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
+    }
+
+    private Intent createResultIntent(){
+        Intent mainIntent = new Intent(AddCounterActivity.this, MainActivity.class);
+        mainIntent.putExtra("counterName", counterName.getText().toString());
+        if(initialValue.getText().toString().equalsIgnoreCase("")){
+            mainIntent.putExtra("initialValue", "0");
+        } else{
+            mainIntent.putExtra("initialValue", Integer.parseInt(initialValue.getText().toString()));
+        }
+        mainIntent.putExtra("comment", comment.getText().toString());
+        setResult(RESULT_OK, mainIntent);
+        return mainIntent;
     }
 }
