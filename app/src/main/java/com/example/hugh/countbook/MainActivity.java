@@ -17,26 +17,36 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.w3c.dom.Text;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Array;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
-    private static final String STORAGE_FILE = "file.sav";
     private static final int ADD_COUNTER_REQUEST = 1;
-    private ListView counterList;
+    private ListView counterListView;
     private TextView numCountView;
     private Button addCounterButton;
     private ArrayList<Counter> counterItems;
     private ArrayAdapter<Counter> adapter;
+
+    static class ViewHolder{
+        TextView counterName;
+        TextView currentCounterValue;
+        Button incrementButton;
+        Button decrementButton;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         numCountView = (TextView) findViewById(R.id.numCounters);
-        counterList = (ListView) findViewById(R.id.counterListView);
+        counterListView = (ListView) findViewById(R.id.counterListView);
         addCounterButton = (Button) findViewById(R.id.addCounter);
         initListeners();
     }
@@ -52,14 +62,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected  void onStart(){
         super.onStart();
-        populateListView();
-
+        AppStorage.loadFromFile(counterItems, this.getApplicationContext());
+        adapter = new CounterListAdapter();
+        counterListView.setAdapter(adapter);
     }
 
     @Override
     protected void onResume(){
         super.onResume();
-
+        // !!!! REMEMBER TO SET CURRENT NUMBER OF ACTIVE COUNTERS HERE !!!!
     }
 
     @Override
@@ -79,13 +90,15 @@ public class MainActivity extends AppCompatActivity {
         counterItems.add(counter1);
         counterItems.add(counter2);
 
+        AppStorage.saveInFile(counterItems, this.getApplicationContext());
+
         adapter = new CounterListAdapter();
-        counterList.setAdapter(adapter);
+        counterListView.setAdapter(adapter);
     }
 
     private void initListeners() {
         // Register clicking on list item
-        counterList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        counterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Counter clickedCounter = counterItems.get(position);
@@ -105,30 +118,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void saveInFile() {
-        try {
-            FileOutputStream fos = openFileOutput(STORAGE_FILE,
-                    Context.MODE_PRIVATE);
-            BufferedWriter out = new BufferedWriter (new OutputStreamWriter(fos));
-
-            Gson gson = new Gson();
-            gson.toJson(counterItems, out);
-            out.flush();
-
-            fos.close();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException();
-        } catch (IOException e) {
-            throw new RuntimeException();
-        }
-    }
-
-    static class ViewHolder{
-        TextView counterName;
-        TextView currentCounterValue;
-        Button incrementButton;
-        Button decrementButton;
-    }
     // Idea taken from https://www.youtube.com/watch?v=WRANgDgM2Zg
     // 2017-09-24
     private class CounterListAdapter extends ArrayAdapter<Counter> {
