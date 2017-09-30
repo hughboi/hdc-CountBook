@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected  void onStart(){
         super.onStart();
-        AppStorage.loadFromFile(counterItems, this.getApplicationContext());
+        counterItems = AppStorage.loadFromFile(this.getApplicationContext());
         adapter = new CounterListAdapter();
         counterListView.setAdapter(adapter);
     }

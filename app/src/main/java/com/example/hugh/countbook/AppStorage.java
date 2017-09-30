@@ -21,7 +21,8 @@ public final class AppStorage {
     private AppStorage() {} // Simulate a static class for storage
     private static final String STORAGE_FILE = "file.sav";
 
-    public static void loadFromFile(ArrayList<Counter> counterList, Context context){
+    public static ArrayList<Counter> loadFromFile(Context context){
+        ArrayList<Counter> counterList;
         try {
             FileInputStream fis = context.openFileInput(STORAGE_FILE);
             BufferedReader in = new BufferedReader(new InputStreamReader(fis));
@@ -31,14 +32,16 @@ public final class AppStorage {
             Gson gson = new Gson();
             Type listType = new TypeToken<ArrayList<Counter>>(){}.getType();
             counterList = gson.fromJson(in, listType);
-
+            if(counterList == null){
+                return counterList = new ArrayList<Counter>();
+            }
         } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
              counterList = new ArrayList<Counter>();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             throw new RuntimeException();
         }
+
+        return counterList;
     }
 
     public static void saveInFile(ArrayList<Counter> counterList, Context context) {
