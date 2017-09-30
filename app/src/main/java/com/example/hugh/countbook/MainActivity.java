@@ -14,30 +14,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import org.w3c.dom.Text;
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.lang.reflect.Array;
-import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     private static final int ADD_COUNTER_REQUEST = 1;
+    private static final int EDIT_COUNTER_REQUEST = 2;
     private ListView counterListView;
     private TextView numCountView;
     private Button addCounterButton;
@@ -83,6 +67,33 @@ public class MainActivity extends AppCompatActivity {
             AppStorage.saveInFile(counterItems, getApplicationContext());
             adapter.notifyDataSetChanged();
         }
+        else if (requestCode == EDIT_COUNTER_REQUEST && resultCode == RESULT_OK){
+            switch(data.getStringExtra("EDIT_TASK")){
+                case "UPDATE":
+                    Counter updatedCounter = (Counter) data.getParcelableExtra("updatedCounter");
+                    Counter oldCounter = counterItems.get(data.getIntExtra("position", -1));
+                    oldCounter.setCounterName(updatedCounter.getCounterName());
+                    oldCounter.setInitialCounterValue(updatedCounter.getInitialCounterValue());
+                    oldCounter.setCurrentCounterValue(updatedCounter.getCurrentCounterValue());
+                    oldCounter.setComment(updatedCounter.getComment());
+                    AppStorage.saveInFile(counterItems, getApplicationContext());
+                    adapter.notifyDataSetChanged();
+                    break;
+                case "DELETE":
+                    counterItems.remove(data.getIntExtra("position", -1));
+                    AppStorage.saveInFile(counterItems, getApplicationContext());
+                    adapter.notifyDataSetChanged();
+                    break;
+                case "RESET":
+                    counterItems.get(data.getIntExtra("position", -1)).resetCounterValue();
+                    adapter.notifyDataSetChanged();
+                    AppStorage.saveInFile(counterItems, getApplicationContext());
+                    break;
+            }
+        }
+        else{
+            assert false;
+        }
     }
 
     private void initListeners() {
@@ -91,9 +102,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Counter clickedCounter = counterItems.get(position);
-                String message = "You clicked position " + position +
-                        ", which is counter: " + clickedCounter.getCounterName();
-                Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
+                Intent editCounterIntent = new Intent(MainActivity.this, EditCounterActivity.class);
+                editCounterIntent.putExtra("clickedCounter", clickedCounter);
+                editCounterIntent.putExtra("position", position);
+                startActivityForResult(editCounterIntent, EDIT_COUNTER_REQUEST);
             }
         });
 
