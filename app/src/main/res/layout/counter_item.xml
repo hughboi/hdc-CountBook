@@ -11,8 +11,18 @@
         android:layout_alignParentTop="true"
         android:layout_toStartOf="@+id/incrementButton"
         android:text="Counter"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/lastModifiedDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/incrementButton"
+        android:layout_below="@+id/counterName"
+        android:text="LMD: mm/dd/yyyy"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/currentValue"
@@ -20,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_toStartOf="@+id/incrementButton"
-        android:layout_below="@+id/counterName"
+        android:layout_below="@+id/lastModifiedDate"
         android:text="Current Value: 0"
         android:textSize="16sp" />
 
@@ -32,7 +42,9 @@
         android:text="+"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:layout_toLeftOf="@+id/decrementButton"/>
+        android:layout_alignBaseline="@+id/lastModifiedDate"
+        android:layout_alignBottom="@+id/lastModifiedDate"
+        android:layout_toStartOf="@+id/decrementButton" />
 
     <Button
         android:id="@+id/decrementButton"
@@ -42,6 +54,7 @@
         android:text="-"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/incrementButton" />
 
 </RelativeLayout>

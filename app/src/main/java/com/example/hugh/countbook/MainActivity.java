@@ -31,7 +31,10 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Array;
 import java.lang.reflect.Type;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     private static final int ADD_COUNTER_REQUEST = 1;
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     static class ViewHolder{
         TextView counterName;
         TextView currentCounterValue;
+        TextView lastModifiedDate;
         Button incrementButton;
         Button decrementButton;
     }
@@ -63,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
     protected  void onStart(){
         super.onStart();
         counterItems = AppStorage.loadFromFile(this.getApplicationContext());
+        numCountView.setText("Active Counters: " + counterItems.size());
         adapter = new CounterListAdapter();
         counterListView.setAdapter(adapter);
     }
@@ -126,6 +131,12 @@ public class MainActivity extends AppCompatActivity {
             // Set the counter name in the view object within the list view
             holder.counterName  = (TextView) itemView.findViewById(R.id.counterName);
             holder.counterName.setText(currentCounter.getCounterName());
+
+            // Set the last modified date field in the view object within the list view
+            holder.lastModifiedDate = (TextView) itemView.findViewById(R.id.lastModifiedDate);
+            DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+            String LMD = "LMD: " + df.format(currentCounter.getLastModifiedDate());
+            holder.lastModifiedDate.setText(LMD);
 
             // set the current counter value in the view object within the list view
             holder.currentCounterValue = (TextView) itemView.findViewById(R.id.currentValue);

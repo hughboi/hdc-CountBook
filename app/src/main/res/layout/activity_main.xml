@@ -19,14 +19,14 @@
     <ListView
         android:id="@+id/counterListView"
         android:layout_width="wrap_content"
-        android:layout_height="374dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="385dp"
+        android:layout_marginTop="0dp"
         android:layout_weight="0.83" />
 
     <Button
         android:id="@+id/addCounter"
         android:layout_width="match_parent"
-        android:layout_height="47dp"
+        android:layout_height="wrap_content"
         android:text="Add Counter" />
 
 </LinearLayout>
