@@ -44,7 +44,13 @@ public class AddCounterActivity extends AppCompatActivity {
 
     private boolean validationSuccess(){
         if(counterName.getText().toString().equalsIgnoreCase("")){
-            Toast.makeText(getApplicationContext(), "You must enter a name for the counter",
+            Toast.makeText(getApplicationContext(), "You must enter a name for the counter.",
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if(initialValue.getText().toString().equalsIgnoreCase("")){
+            Toast.makeText(getApplicationContext(), "You must enter an initial value for the counter.",
                     Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -54,11 +60,7 @@ public class AddCounterActivity extends AppCompatActivity {
     private Intent createResultIntent(){
         Intent mainIntent = new Intent(AddCounterActivity.this, MainActivity.class);
         mainIntent.putExtra("counterName", counterName.getText().toString());
-        if(initialValue.getText().toString().equalsIgnoreCase("")){
-            mainIntent.putExtra("initialValue", "0");
-        } else{
-            mainIntent.putExtra("initialValue", Integer.parseInt(initialValue.getText().toString()));
-        }
+        mainIntent.putExtra("initialValue", Integer.parseInt(initialValue.getText().toString()));
         mainIntent.putExtra("comment", comment.getText().toString());
         setResult(RESULT_OK, mainIntent);
         return mainIntent;
