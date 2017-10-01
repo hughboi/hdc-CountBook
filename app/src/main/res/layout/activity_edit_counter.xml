@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:hint="Current Counter Value"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editInitialValue"/>

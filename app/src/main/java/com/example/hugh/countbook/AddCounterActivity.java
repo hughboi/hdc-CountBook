@@ -22,6 +22,7 @@ public class AddCounterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_counter);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         counterName = (EditText) findViewById(R.id.counterName);
         initialValue = (EditText) findViewById(R.id.initialValue);
