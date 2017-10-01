@@ -6,17 +6,36 @@
     android:layout_height="match_parent"
     tools:context="com.example.hugh.countbook.EditCounterActivity">
 
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Counter Name"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <EditText
         android:id="@+id/editCounterName"
-        android:layout_width="332dp"
-        android:layout_height="45dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Counter Name"
         android:inputType="text"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/name"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/lmd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last Modified Date (mm/dd/yyyy)"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editCounterName"/>
 
     <EditText
         android:id="@+id/editDate"
@@ -25,65 +44,92 @@
         android:hint="Last Modified Date"
         android:focusable="false"
         android:inputType="none"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="0dp"
         android:textSize="18dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editCounterName"/>
+        app:layout_constraintTop_toBottomOf="@+id/lmd"
+        android:layout_marginStart="8dp"/>
+
+    <TextView
+        android:id="@+id/initial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Initial Counter Value"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/editDate"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
         android:id="@+id/editInitialValue"
-        android:layout_width="215dp"
-        android:layout_height="43dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Initial Counter Value"
         android:inputType="number"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editDate" />
+        app:layout_constraintTop_toBottomOf="@+id/initial"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Counter Value"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/editInitialValue"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
         android:id="@+id/editCurrentValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
         android:ems="10"
         android:inputType="number"
         android:hint="Current Counter Value"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editInitialValue"/>
+        app:layout_constraintTop_toBottomOf="@+id/current"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/commentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comment"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editCurrentValue"/>
 
     <EditText
         android:id="@+id/editComment"
-        android:layout_width="344dp"
-        android:layout_height="213dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="0dp"
+        android:layout_width="250dp"
+        android:layout_height="120dp"
         android:ems="10"
         android:gravity="top|left"
         android:hint="Comment"
         android:inputType="textMultiLine"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editCurrentValue" />
+        app:layout_constraintTop_toBottomOf="@+id/commentText"
+        android:layout_marginStart="8dp" />
 
     <Button
         android:id="@+id/updateCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="0dp"
         android:text="Update"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editComment" />
+        app:layout_constraintTop_toBottomOf="@+id/editComment"
+        app:layout_constraintRight_toLeftOf="@+id/deleteCounter"/>
 
     <Button
         android:id="@+id/deleteCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Delete"
-        app:layout_constraintTop_toBottomOf="@id/editComment"
-        app:layout_constraintLeft_toRightOf="@id/updateCounter"/>
+        app:layout_constraintLeft_toRightOf="@+id/updateCounter"
+        app:layout_constraintTop_toBottomOf="@+id/editComment"
+        app:layout_constraintRight_toLeftOf="@+id/resetCounter"/>
 
     <Button
         android:id="@+id/resetCounter"
@@ -91,6 +137,7 @@
         android:layout_height="wrap_content"
         android:text="Reset"
         app:layout_constraintTop_toBottomOf="@+id/editComment"
-        app:layout_constraintLeft_toRightOf="@+id/deleteCounter"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/deleteCounter" />
 
 </android.support.constraint.ConstraintLayout>

@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -147,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
             // Set the last modified date field in the view object within the list view
             holder.lastModifiedDate = (TextView) itemView.findViewById(R.id.lastModifiedDate);
             DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
-            String LMD = "LMD: " + df.format(currentCounter.getLastModifiedDate());
+            String LMD = "Last Modified Date: " + df.format(currentCounter.getLastModifiedDate());
             holder.lastModifiedDate.setText(LMD);
 
             // set the current counter value in the view object within the list view
@@ -177,9 +178,14 @@ public class MainActivity extends AppCompatActivity {
         viewHolder.decrementButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                associatedCounter.decrementCurrentCounterValue();
-                adapter.notifyDataSetChanged();
-                AppStorage.saveInFile(counterItems, getApplicationContext());
+                if(associatedCounter.getCurrentCounterValue() == 0){
+                    Toast.makeText(getApplicationContext(), "Counter cannot go less than zero.",
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    associatedCounter.decrementCurrentCounterValue();
+                    adapter.notifyDataSetChanged();
+                    AppStorage.saveInFile(counterItems, getApplicationContext());
+                }
             }
         });
     }

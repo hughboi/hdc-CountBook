@@ -36,25 +36,27 @@
 
     <Button
         android:id="@+id/incrementButton"
-        android:focusable="false"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:text="+"
-        android:textSize="15sp"
-        android:textStyle="bold"
         android:layout_alignBaseline="@+id/lastModifiedDate"
         android:layout_alignBottom="@+id/lastModifiedDate"
-        android:layout_toStartOf="@+id/decrementButton" />
+        android:layout_toStartOf="@+id/decrementButton"
+        android:background="@android:color/holo_green_light"
+        android:focusable="false"
+        android:text="+"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/decrementButton"
-        android:focusable="false"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_alignBottom="@+id/incrementButton"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/holo_red_dark"
+        android:focusable="false"
         android:text="-"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_alignParentRight="true"
-        android:layout_alignBottom="@+id/incrementButton" />
+        android:textStyle="bold" />
 
 </RelativeLayout>

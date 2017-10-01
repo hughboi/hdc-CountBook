@@ -94,8 +94,7 @@ public class EditCounterActivity extends AppCompatActivity {
     private void setViewText(){
         editCounterName.setText(clickedCounter.getCounterName());
         DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
-        String LMD = "Last Modified Date: " + df.format(clickedCounter.getLastModifiedDate());
-        lastModifiedDate.setText(LMD);
+        lastModifiedDate.setText(df.format(clickedCounter.getLastModifiedDate()));
         editInitialValue.setText(Integer.toString(clickedCounter.getInitialCounterValue()));
         editCurrentValue.setText(Integer.toString(clickedCounter.getCurrentCounterValue()));
         editComment.setText(clickedCounter.getComment());
