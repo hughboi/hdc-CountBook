@@ -1,13 +1,20 @@
+/*
+ * Counter.java
+ *
+ * Version: 1.0
+ *
+ * Date: 2017-10-01
+ *
+ * Copyright (c) 2017. CMPUT 301. University of Alberta - All Rights Reserved. You may use, distribute, or modify
+ * this code under terms and conditions of the Code of Student Behavior at the University of Alberta. You may find a
+ * copy of the license in th project. Otherwise please contact hdc@ualberta.ca
+ */
 package com.example.hugh.countbook;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.Date;
-
-/**
- * Created by hughc on 2017-09-23.
- */
 
 public class Counter implements Parcelable {
     private String counterName;

@@ -1,3 +1,16 @@
+/*
+ * MainActivity.java
+ *
+ * Version: 1.0
+ *
+ * Date: 2017-10-01
+ *
+ * Author: Hugh Craig
+ *
+ * Copyright (c) 2017. CMPUT 301. University of Alberta - All Rights Reserved. You may use, distribute, or modify
+ *  this code under terms and conditions of the Code of Student Behavior at the University of Alberta. You may find a
+ *  copy of the license in th project. Otherwise please contact hdc@ualberta.ca
+ */
 package com.example.hugh.countbook;
 
 import android.content.Context;
@@ -60,25 +73,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if (requestCode == ADD_COUNTER_REQUEST && resultCode == RESULT_OK){
-            String counterName = data.getStringExtra("counterName");
-            int initialValue = data.getIntExtra("initialValue", 0);
-            String comment = data.getStringExtra("comment");
-            Counter newCounter = new Counter(counterName, initialValue, comment);
-            counterItems.add(newCounter);
-            AppStorage.saveInFile(counterItems, getApplicationContext());
-            adapter.notifyDataSetChanged();
+            addCounter(data);
         }
-        else if (requestCode == EDIT_COUNTER_REQUEST && resultCode == RESULT_OK){
+        if (requestCode == EDIT_COUNTER_REQUEST && resultCode == RESULT_OK){
             switch(data.getStringExtra("EDIT_TASK")){
                 case "UPDATE":
-                    Counter updatedCounter = (Counter) data.getParcelableExtra("updatedCounter");
-                    Counter oldCounter = counterItems.get(data.getIntExtra("position", -1));
-                    oldCounter.setCounterName(updatedCounter.getCounterName());
-                    oldCounter.setInitialCounterValue(updatedCounter.getInitialCounterValue());
-                    oldCounter.setCurrentCounterValue(updatedCounter.getCurrentCounterValue());
-                    oldCounter.setComment(updatedCounter.getComment());
-                    AppStorage.saveInFile(counterItems, getApplicationContext());
-                    adapter.notifyDataSetChanged();
+                    updateCounter(data);
                     break;
                 case "DELETE":
                     counterItems.remove(data.getIntExtra("position", -1));
@@ -86,15 +86,40 @@ public class MainActivity extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
                     break;
                 case "RESET":
-                    counterItems.get(data.getIntExtra("position", -1)).resetCounterValue();
+                    counterItems.get(data.getIntExtra("position", -1))
+                            .resetCounterValue();
                     adapter.notifyDataSetChanged();
                     AppStorage.saveInFile(counterItems, getApplicationContext());
                     break;
+                default:
+                    throw new RuntimeException("NON_EXISTENT EDIT_TASK REQUEST");
             }
         }
-        else{
-            assert false;
-        }
+    }
+
+    private void addCounter(Intent data){
+        String counterName = data.getStringExtra("counterName");
+        int initialValue = data.getIntExtra("initialValue", 0);
+        String comment = data.getStringExtra("comment");
+        Counter newCounter = new Counter(counterName, initialValue, comment);
+        counterItems.add(newCounter);
+        AppStorage.saveInFile(counterItems, getApplicationContext());
+        adapter.notifyDataSetChanged();
+    }
+
+    private void updateCounter(Intent data){
+        Counter updatedCounter = (Counter) data.getParcelableExtra(
+                "updatedCounter");
+        Counter oldCounter = counterItems.get(data.getIntExtra(
+                "position", -1));
+        oldCounter.setCounterName(updatedCounter.getCounterName());
+        oldCounter.setInitialCounterValue(updatedCounter
+                .getInitialCounterValue());
+        oldCounter.setCurrentCounterValue(updatedCounter
+                .getCurrentCounterValue());
+        oldCounter.setComment(updatedCounter.getComment());
+        AppStorage.saveInFile(counterItems, getApplicationContext());
+        adapter.notifyDataSetChanged();
     }
 
     private void initListeners() {

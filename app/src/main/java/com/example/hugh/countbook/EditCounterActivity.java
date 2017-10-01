@@ -1,3 +1,16 @@
+/*
+ * EditCounterActivity.java
+ *
+ * Version: 1.0
+ *
+ * Date: 2017-10-01
+ *
+ * Author: Hugh Craig
+ *
+ * Copyright (c) 2017. CMPUT 301. University of Alberta - All Rights Reserved. You may use, distribute, or modify
+ *  this code under terms and conditions of the Code of Student Behavior at the University of Alberta. You may find a
+ *  copy of the license in th project. Otherwise please contact hdc@ualberta.ca
+ */
 package com.example.hugh.countbook;
 
 import android.content.Intent;
@@ -54,12 +67,17 @@ public class EditCounterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(validationSuccess()) {
-                    Intent updateCounterIntent = new Intent(EditCounterActivity.this, MainActivity.class);
+                    Intent updateCounterIntent = new Intent(
+                            EditCounterActivity.this, MainActivity.class);
                     updateCounterIntent.putExtra("EDIT_TASK", "UPDATE");
-                    clickedCounter.setCounterName(editCounterName.getText().toString());
-                    clickedCounter.setInitialCounterValue(Integer.parseInt(editInitialValue.getText().toString()));
-                    clickedCounter.setCurrentCounterValue(Integer.parseInt(editCurrentValue.getText().toString()));
-                    clickedCounter.setComment(editComment.getText().toString());
+                    clickedCounter.setCounterName(
+                            editCounterName.getText().toString());
+                    clickedCounter.setInitialCounterValue(
+                            Integer.parseInt(editInitialValue.getText().toString()));
+                    clickedCounter.setCurrentCounterValue(
+                            Integer.parseInt(editCurrentValue.getText().toString()));
+                    clickedCounter.setComment(
+                            editComment.getText().toString());
                     updateCounterIntent.putExtra("updatedCounter", clickedCounter);
                     updateCounterIntent.putExtra("position", counterPosition);
                     setResult(RESULT_OK, updateCounterIntent);
@@ -71,7 +89,8 @@ public class EditCounterActivity extends AppCompatActivity {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent deleteCounterIntent = new Intent(EditCounterActivity.this, MainActivity.class);
+                Intent deleteCounterIntent = new Intent(
+                        EditCounterActivity.this, MainActivity.class);
                 deleteCounterIntent.putExtra("EDIT_TASK", "DELETE");
                 deleteCounterIntent.putExtra("position", counterPosition);
                 setResult(RESULT_OK, deleteCounterIntent);
@@ -82,7 +101,8 @@ public class EditCounterActivity extends AppCompatActivity {
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent resetCounterIntent = new Intent(EditCounterActivity.this, MainActivity.class);
+                Intent resetCounterIntent = new Intent(EditCounterActivity.this,
+                        MainActivity.class);
                 resetCounterIntent.putExtra("EDIT_TASK", "RESET");
                 resetCounterIntent.putExtra("position", counterPosition);
                 setResult(RESULT_OK, resetCounterIntent);
@@ -94,27 +114,33 @@ public class EditCounterActivity extends AppCompatActivity {
     private void setViewText(){
         editCounterName.setText(clickedCounter.getCounterName());
         DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
-        lastModifiedDate.setText(df.format(clickedCounter.getLastModifiedDate()));
-        editInitialValue.setText(Integer.toString(clickedCounter.getInitialCounterValue()));
-        editCurrentValue.setText(Integer.toString(clickedCounter.getCurrentCounterValue()));
+        lastModifiedDate.setText(df.format(
+                clickedCounter.getLastModifiedDate()));
+        editInitialValue.setText(Integer.toString(
+                clickedCounter.getInitialCounterValue()));
+        editCurrentValue.setText(Integer.toString(
+                clickedCounter.getCurrentCounterValue()));
         editComment.setText(clickedCounter.getComment());
     }
 
     private boolean validationSuccess(){
         if(editCounterName.getText().toString().equalsIgnoreCase("")){
-            Toast.makeText(getApplicationContext(), "You must enter a name for the counter.",
+            Toast.makeText(getApplicationContext(),
+                    "You must enter a name for the counter.",
                     Toast.LENGTH_SHORT).show();
             return false;
         }
 
         if(editInitialValue.getText().toString().equalsIgnoreCase("")){
-            Toast.makeText(getApplicationContext(), "You must enter an initial value for the counter.",
+            Toast.makeText(getApplicationContext(),
+                    "You must enter an initial value for the counter.",
                     Toast.LENGTH_SHORT).show();
             return false;
         }
 
         if(editCurrentValue.getText().toString().equalsIgnoreCase("")){
-            Toast.makeText(getApplicationContext(), "You must enter a current value for the counter.",
+            Toast.makeText(getApplicationContext(),
+                    "You must enter a current value for the counter.",
                     Toast.LENGTH_SHORT).show();
             return false;
         }

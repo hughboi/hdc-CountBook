@@ -1,3 +1,16 @@
+/*
+ * AppStorage.java
+ *
+ * Version: 1.0
+ *
+ * Date: 2017-10-01
+ *
+ * Author: Hugh Craig
+ *
+ * Copyright (c) 2017. CMPUT 301. University of Alberta - All Rights Reserved. You may use, distribute, or modify
+ * this code under terms and conditions of the Code of Student Behavior at the University of Alberta. You may find a
+ * copy of the license in th project. Otherwise please contact hdc@ualberta.ca
+ */
 package com.example.hugh.countbook;
 
 import android.content.Context;
