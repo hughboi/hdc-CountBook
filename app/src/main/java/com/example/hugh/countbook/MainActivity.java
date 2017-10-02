@@ -32,6 +32,7 @@ import android.widget.Toast;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     private static final int ADD_COUNTER_REQUEST = 1;
@@ -88,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
                 case "RESET":
                     counterItems.get(data.getIntExtra("position", -1))
                             .resetCounterValue();
+                    counterItems.get(data.getIntExtra("position", -1))
+                            .setLastModifiedDate(new Date());
                     adapter.notifyDataSetChanged();
                     AppStorage.saveInFile(counterItems, getApplicationContext());
                     break;
@@ -113,6 +116,10 @@ public class MainActivity extends AppCompatActivity {
         Counter oldCounter = counterItems.get(data.getIntExtra(
                 "position", -1));
         oldCounter.setCounterName(updatedCounter.getCounterName());
+        if(oldCounter.getCurrentCounterValue()
+                != updatedCounter.getCurrentCounterValue()){
+            oldCounter.setLastModifiedDate(new Date());
+        }
         oldCounter.setInitialCounterValue(updatedCounter
                 .getInitialCounterValue());
         oldCounter.setCurrentCounterValue(updatedCounter

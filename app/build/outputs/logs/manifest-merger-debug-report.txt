@@ -1,99 +1,99 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:2:1-29:12
+ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:2:1-29:12
 	package
-		ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:3:5-41
-		INJECTED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml
+		ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:3:5-41
+		INJECTED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml
+		INJECTED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml
+		INJECTED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml
+		INJECTED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml
+		INJECTED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml
+		INJECTED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml
 application
-ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:5:5-27:19
-MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\hughc\.android\build-cache\deb883dc0fd2504f92de6e6fd613e607401d23cc\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\hughc\.android\build-cache\e484225370f7fe74d8e5a63b9a8bd864201a313a\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\hughc\.android\build-cache\f0fe1f8a34eeeb12ca35ce84e238e3c37304f5ac\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\hughc\.android\build-cache\727999863205c0917cfff3b503d2af4eecd2065a\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\hughc\.android\build-cache\ea955600de7c362cef02808fef133b7506a01673\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\hughc\.android\build-cache\6ca5bb137c38e47605109d524cc4a46f43df0b0d\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\hughc\.android\build-cache\93b9aebd17037702f6ef308cbc3ce29010074977\output\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\hughc\.android\build-cache\b4e83210f31a67bc16f5da05182a30e181275d80\output\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\hughc\.android\build-cache\c16947ff07e683da0aca62601c8524021ac6236f\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\hughc\.android\build-cache\a738aa10112f802321f863711cc327a5c9437422\output\AndroidManifest.xml:9:5-20
+ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:5:5-27:19
+MERGED from [com.android.support:appcompat-v7:25.3.1] /cshome/hdc/.android/build-cache/d59feb7c83a7a76a3de568a1d1d988d4f37d81cf/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.1] /cshome/hdc/.android/build-cache/c84d41305e4f2a6e25bbaa1d4cab795c73138fec/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] /cshome/hdc/.android/build-cache/4930326ca2039070f74e23e03de1a471778b8baf/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] /cshome/hdc/.android/build-cache/5290e3a097befd318490e4222376ee79d848347b/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] /cshome/hdc/.android/build-cache/f30e687a8c4b061fb4466b3eb2588170933d16d6/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] /cshome/hdc/.android/build-cache/7ff3f4e98927ea7ac4079eab466e5d0e7136f9a7/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /cshome/hdc/.android/build-cache/0a1dd9e691a7621ef5cde930515267f14b8aba30/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /cshome/hdc/.android/build-cache/a4145af1a4843e4d51f1a6a53a0b4f9ec87952f6/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:25.3.1] /cshome/hdc/.android/build-cache/bc6c61f98ea3af7f445f715c6024ea24fef7ba21/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /cshome/hdc/.android/build-cache/b0eb63d205aaa62eda0422e60cc553806e156127/output/AndroidManifest.xml:9:5-20
 	android:label
-		ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:8:9-41
+		ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:8:9-41
 	android:supportsRtl
-		ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:10:9-35
 	android:roundIcon
-		ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:9:9-54
+		ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:9:9-54
 	android:allowBackup
-		ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:6:9-35
 	android:icon
-		ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:7:9-43
+		ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:7:9-43
 	android:theme
-		ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:11:9-40
+		ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:11:9-40
 activity#com.example.hugh.countbook.MainActivity
-ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:12:9-18:20
+ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:12:9-18:20
 	android:name
-		ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:12:19-47
+		ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:12:19-47
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:13:13-17:29
+ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:13:13-17:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:14:17-69
+ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:14:17-69
 	android:name
-		ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:14:25-66
+		ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:14:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:16:17-77
+ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:16:17-77
 	android:name
-		ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:16:27-74
+		ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:16:27-74
 activity#com.example.hugh.countbook.AddCounterActivity
-ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:19:9-22:15
+ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:19:9-22:15
 	android:parentActivityName
-		ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:21:13-55
+		ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:21:13-55
 	android:name
-		ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:20:13-47
+		ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:20:13-47
 activity#com.example.hugh.countbook.EditCounterActivity
-ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:23:9-26:20
+ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:23:9-26:20
 	android:parentActivityName
-		ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:25:13-55
+		ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:25:13-55
 	android:name
-		ADDED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml:24:13-48
+		ADDED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml:24:13-48
 uses-sdk
-INJECTED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\hughc\.android\build-cache\deb883dc0fd2504f92de6e6fd613e607401d23cc\output\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\hughc\.android\build-cache\e484225370f7fe74d8e5a63b9a8bd864201a313a\output\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\hughc\.android\build-cache\f0fe1f8a34eeeb12ca35ce84e238e3c37304f5ac\output\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\hughc\.android\build-cache\727999863205c0917cfff3b503d2af4eecd2065a\output\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\hughc\.android\build-cache\ea955600de7c362cef02808fef133b7506a01673\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\hughc\.android\build-cache\6ca5bb137c38e47605109d524cc4a46f43df0b0d\output\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\hughc\.android\build-cache\93b9aebd17037702f6ef308cbc3ce29010074977\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\hughc\.android\build-cache\b4e83210f31a67bc16f5da05182a30e181275d80\output\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\hughc\.android\build-cache\c16947ff07e683da0aca62601c8524021ac6236f\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\hughc\.android\build-cache\a738aa10112f802321f863711cc327a5c9437422\output\AndroidManifest.xml:5:5-7:41
+INJECTED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:appcompat-v7:25.3.1] /cshome/hdc/.android/build-cache/d59feb7c83a7a76a3de568a1d1d988d4f37d81cf/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.3.1] /cshome/hdc/.android/build-cache/c84d41305e4f2a6e25bbaa1d4cab795c73138fec/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] /cshome/hdc/.android/build-cache/4930326ca2039070f74e23e03de1a471778b8baf/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] /cshome/hdc/.android/build-cache/5290e3a097befd318490e4222376ee79d848347b/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] /cshome/hdc/.android/build-cache/f30e687a8c4b061fb4466b3eb2588170933d16d6/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] /cshome/hdc/.android/build-cache/7ff3f4e98927ea7ac4079eab466e5d0e7136f9a7/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /cshome/hdc/.android/build-cache/0a1dd9e691a7621ef5cde930515267f14b8aba30/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /cshome/hdc/.android/build-cache/a4145af1a4843e4d51f1a6a53a0b4f9ec87952f6/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-compat:25.3.1] /cshome/hdc/.android/build-cache/bc6c61f98ea3af7f445f715c6024ea24fef7ba21/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /cshome/hdc/.android/build-cache/b0eb63d205aaa62eda0422e60cc553806e156127/output/AndroidManifest.xml:5:5-7:41
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\hughc\.android\build-cache\deb883dc0fd2504f92de6e6fd613e607401d23cc\output\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:25.3.1] /cshome/hdc/.android/build-cache/d59feb7c83a7a76a3de568a1d1d988d4f37d81cf/output/AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		INJECTED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml
+		INJECTED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml
+		INJECTED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\hughc\AndroidStudioProjects\hdc-CountBook\app\src\main\AndroidManifest.xml
+		INJECTED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml
+		INJECTED from /cshome/hdc/CMPUT301/hdc-CountBook/app/src/main/AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\hughc\.android\build-cache\deb883dc0fd2504f92de6e6fd613e607401d23cc\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\hughc\.android\build-cache\e484225370f7fe74d8e5a63b9a8bd864201a313a\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\hughc\.android\build-cache\f0fe1f8a34eeeb12ca35ce84e238e3c37304f5ac\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\hughc\.android\build-cache\727999863205c0917cfff3b503d2af4eecd2065a\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\hughc\.android\build-cache\ea955600de7c362cef02808fef133b7506a01673\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\hughc\.android\build-cache\6ca5bb137c38e47605109d524cc4a46f43df0b0d\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\hughc\.android\build-cache\93b9aebd17037702f6ef308cbc3ce29010074977\output\AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\hughc\.android\build-cache\b4e83210f31a67bc16f5da05182a30e181275d80\output\AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\hughc\.android\build-cache\c16947ff07e683da0aca62601c8524021ac6236f\output\AndroidManifest.xml:25:5-27:34
+ADDED from [com.android.support:appcompat-v7:25.3.1] /cshome/hdc/.android/build-cache/d59feb7c83a7a76a3de568a1d1d988d4f37d81cf/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-v4:25.3.1] /cshome/hdc/.android/build-cache/c84d41305e4f2a6e25bbaa1d4cab795c73138fec/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] /cshome/hdc/.android/build-cache/4930326ca2039070f74e23e03de1a471778b8baf/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] /cshome/hdc/.android/build-cache/5290e3a097befd318490e4222376ee79d848347b/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] /cshome/hdc/.android/build-cache/f30e687a8c4b061fb4466b3eb2588170933d16d6/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] /cshome/hdc/.android/build-cache/7ff3f4e98927ea7ac4079eab466e5d0e7136f9a7/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /cshome/hdc/.android/build-cache/0a1dd9e691a7621ef5cde930515267f14b8aba30/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /cshome/hdc/.android/build-cache/a4145af1a4843e4d51f1a6a53a0b4f9ec87952f6/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-compat:25.3.1] /cshome/hdc/.android/build-cache/bc6c61f98ea3af7f445f715c6024ea24fef7ba21/output/AndroidManifest.xml:25:5-27:34
 	android:value
-		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\hughc\.android\build-cache\deb883dc0fd2504f92de6e6fd613e607401d23cc\output\AndroidManifest.xml:27:9-31
+		ADDED from [com.android.support:appcompat-v7:25.3.1] /cshome/hdc/.android/build-cache/d59feb7c83a7a76a3de568a1d1d988d4f37d81cf/output/AndroidManifest.xml:27:9-31
 	android:name
-		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\hughc\.android\build-cache\deb883dc0fd2504f92de6e6fd613e607401d23cc\output\AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:appcompat-v7:25.3.1] /cshome/hdc/.android/build-cache/d59feb7c83a7a76a3de568a1d1d988d4f37d81cf/output/AndroidManifest.xml:26:9-47
